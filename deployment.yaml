@@ -1,0 +1,22 @@
+#generic k8s deployment file
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scribbly
+  labels:
+    app: scribbly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scribbly
+  template:
+    metadata:
+      labels:
+        app: scribbly
+    spec:
+      containers:
+        - name: scribbly
+          image:
+          ports:
+            - containerPort: 8080
